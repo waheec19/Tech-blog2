@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="h-full bg-purple-50" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | TransBit Tech Blog 2022</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<!--
+  This example requires updating your template:
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+-->
+<div class="min-h-full bg-purple-50">
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-8" src="https://kdapz.com/wp-content/uploads/2021/11/whitetechykd.png" alt="Workflow">
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+      
+              <a href="/dashboard" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+              <!-- Conditionally render login or logout links -->        
+              {{#if logged_in}}
+              <a href="#" class="logout-link bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+              {{else}}
+              <a href="/login" class="text-gray-300 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button -->
+          <button id="togglemebutton" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="resultnav" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+  
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="hidden md:hidden" id="resultnav">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</a>
+        <a href="/Dashboard" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+        {{#if logged_in}}
+        <a href="#" class="logout-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Logout</a>
+        {{else}}
+        <a href="/login" class="text-gray-300 hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      {{!-- <img src="/public/images/banner.svg" alt="TransBit Tech Blog 2022"> --}}
+      <h1 class="text-3xl font-bold text-amber-300">TransBit Tech Blog 2022</h1>
+    </div>
+  </header>
+  <main class="col-auto">
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      {{{body}}}
+    </div>
+  </main>
+</div>
+
+<footer id="footer" class="bg-gray-800 text-center lg:text-left">
+  <div class="text-purple-50 text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-yellow-300" href="#">TransBit Tech Blog 2022</a>
+  </div>
+</footer>
+
+</html>
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{/if}}
+<script src="/js/passive.js"></script>
