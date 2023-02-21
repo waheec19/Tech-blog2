@@ -1,9 +1,5 @@
 const post_id = document.querySelector('input[name="post-id"]').value.trim();
 
-// const id = window.location.toString().split('/')[
-//   window.location.toString().split('/').length - 1
-// ];
-
 const editFormHandler = async (event) => {
   event.preventDefault();
 
@@ -25,7 +21,7 @@ const editFormHandler = async (event) => {
   });
 
   if (!response.ok) {
-    //alert('Failed to update your post');
+    
   }
   document.location.replace('/dashboard');
 };
@@ -38,7 +34,7 @@ const deleteClickHandler = async () => {
   document.location.replace('/dashboard');
 };
 
-// WHY ONE BUTTON IS SUBMIT AND THE OTHER IS CLICK?
+
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
